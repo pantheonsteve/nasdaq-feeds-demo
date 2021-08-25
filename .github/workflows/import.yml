@@ -17,4 +17,11 @@ jobs:
           max: 3
           template: "> {{ title }}\n\n[{{ title }}]({{ link }})"
           readme-section: feed
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl
+        uses: wei/curl@v1
+        with:
+          args: --include --request POST --header 'Content-Type: application/vnd.api+json' --header 'Accept: application/vnd.api+json' --header 'authorization: Basic YXBpX3VzZXI6cGFzc3dvcmQ=' https://dev-nasdaq-feeds-demo.pantheonsite.io/jsonapi/node/article --data-binary '{"data":{"type":"node--article","attributes" {"title":"My GitHub actions custom Node for Nasdaq commandline","body":{"value":"Custom value","format":"plain_text"}}}}'
           
