@@ -1,6 +1,19 @@
-- uses: i-valchev/rss-to-json@v1
-  with:
-    source: data/feeds.yaml # An optional parameter to specify the source. Defaults to feeds.yaml
-    target: output/feeds.json # An optional parameter to specify the target. Defaults to feeds.json
-    sortBy: An optional parameter to sort the feed items by a field. Default is isoDate.
-    sortOrder: An optional parameter to specify the order direction. 'desc' or 'asc'. Default is desc.
+name: Import RSS Feed 
+
+on:
+  schedule:
+    # Once a day at 8 AM
+    - cron: 0 8 * * *
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: i-valchev/rss-to-json@v1
+        with:
+          source: data/feeds.yaml # An optional parameter to specify the source. Defaults to feeds.yaml
+          target: output/feeds.json # An optional parameter to specify the target. Defaults to feeds.json
+          sortBy: An optional parameter to sort the feed items by a field. Default is isoDate.
+          sortOrder: An optional parameter to specify the order direction. 'desc' or 'asc'. Default is desc.
