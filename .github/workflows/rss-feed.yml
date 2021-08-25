@@ -12,4 +12,6 @@ jobs:
       - uses: JasonEtco/rss-to-readme@v1
         with:
           feed-url: https://jasonet.co/rss.xml
+          template: "> {{ excerpt }}\n\n[Read more!]({{ url }})"
           readme-section: feed
+          
