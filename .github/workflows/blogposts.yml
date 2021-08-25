@@ -20,7 +20,7 @@ jobs:
       - name: Commit file changes
         run: |
             git config --global user.name 'pantheonsteve'
-            git config --global user.email 'steve.bresnick@pantheon.io'
+            git config --global user.email 'stevebresnick@gmail.com'
             git add .
             git diff --quiet --cached || git commit -m "Update README"    
       - name: Push changes
