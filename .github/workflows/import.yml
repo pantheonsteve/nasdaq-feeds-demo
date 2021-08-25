@@ -25,4 +25,4 @@ jobs:
             --header 'Accept: application/vnd.api+json' \
             --header 'authorization: Basic YXBpX3VzZXI6cGFzc3dvcmQ=' \
             https://dev-nasdaq-feeds-demo.pantheonsite.io/jsonapi/node/article \
-            --data-binary '{"data":{"type":"node--article","attributes":{"title":{{ title }},"body":{"value":"Custom value","format":"plain_text"}}}}'
+            --data-binary '{"data":{"type":"node--article","attributes":{"title":"created from Github Actions","body":{"value":"Custom value","format":"plain_text"}}}}'
