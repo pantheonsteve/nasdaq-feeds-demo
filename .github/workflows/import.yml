@@ -17,9 +17,6 @@ jobs:
           max: 3
           template: "> {{ title }}\n\n[{{ title }}]({{ link }})"
           readme-section: feed
-  curl:
-    runs-on: ubuntu-latest
-    steps:
       - name: curl
         run: |
           curl --include \
