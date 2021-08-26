@@ -28,3 +28,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Run node script as a test
+        run: node ${{ github.workspace }}/test.js
