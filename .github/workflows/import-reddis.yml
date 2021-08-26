@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 15.x
       - name: install https
-        run: npm install -g httprs
+        run: npm install -g https
       - name: install rss-parser
         run: npm install --save rss-parser
       - name: List files in the repository
