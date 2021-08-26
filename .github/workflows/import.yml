@@ -29,4 +29,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Run node script as a test
-        run: node ${{ github.workspace }}/test.js
+        run: node ${{ github.workspace }}/post-to-drupal.js
