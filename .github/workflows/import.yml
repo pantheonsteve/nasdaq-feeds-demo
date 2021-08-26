@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: install https
         run: npm install -g https
-      - name: post data to drupal
-        run: node ../scripts/test.js
+      - name: print working directory
+        run: pwd
