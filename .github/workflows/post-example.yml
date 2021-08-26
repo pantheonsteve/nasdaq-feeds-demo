@@ -1,0 +1,26 @@
+name: POST example to Drupal
+
+on:
+  schedule:
+    # Once a day at 8 AM
+    - cron: 0 8 * * *
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+      - name: install https
+        run: npm install -g https
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: POST example node to Drupal
+        run: node ${{ github.workspace }}/post-to-drupal.js
