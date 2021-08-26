@@ -14,4 +14,4 @@ jobs:
       - name: install https
         run: npm install -g https
       - name: print working directory
-        run: pwd
+        run: node /home/runner/work/nasdaq-feeds-demo/nasdaq-feeds-demo/test.js
