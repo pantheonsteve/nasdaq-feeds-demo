@@ -20,7 +20,7 @@ jobs:
       - name: install https
         run: npm install -g https
       - name: install rss-parser
-        run: npm install -g rss-parser
+        run: npm install --save rss-parser
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
