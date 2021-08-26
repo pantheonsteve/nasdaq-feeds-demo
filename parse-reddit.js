@@ -1,5 +1,5 @@
 const https = require('https')
-let Parser = require('rss-parser');
+const Parser = require('rss-parser');
 let parser = new Parser;
 
 (
@@ -32,14 +32,17 @@ let parser = new Parser;
 
     console.log(JSON.stringify(item))
 
+    let tag = '[Reddit] - ';
+    let title = tag.concat(' ', item.title);
+
     const data = {
       data: {
         type: "node--article",
         attributes: {
-          title: item.title,
+          title: title,
           body: {
-            value: item.author.uri,
-            format: "plain_text"
+            value: item.content,
+            format: "full_html"
           }
         }
       }
