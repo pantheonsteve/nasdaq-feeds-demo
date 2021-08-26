@@ -14,4 +14,4 @@ jobs:
       - name: install https
         run: npm install -g https
       - name: post data to drupal
-        run: node ./.github/scripts/test.js
+        run: node ../scripts/test.js
