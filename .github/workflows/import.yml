@@ -10,8 +10,21 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+        
     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: install https
         run: npm install -g https
-      - name: print working directory
-        run: node /home/runner/work/nasdaq-feeds-demo/nasdaq-feeds-demo/test.js
+      - name: install rss-parser
+        run: npm install -g rss-parser
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
