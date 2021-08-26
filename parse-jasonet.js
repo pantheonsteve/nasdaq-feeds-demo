@@ -41,8 +41,8 @@ let parser = new Parser;
         attributes: {
           title: title,
           body: {
-            value: item.content,
-            format: "plain_text"
+            value: item['content:encoded'],
+            format: "full_html"
           }
         }
       }
