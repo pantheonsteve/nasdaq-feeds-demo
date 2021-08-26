@@ -1,4 +1,4 @@
-name: Push Feed Data to Drupal
+name: Push Multiple Feed Data to Drupal
 
 on:
   schedule:
