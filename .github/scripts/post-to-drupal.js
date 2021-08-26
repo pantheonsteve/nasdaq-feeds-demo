@@ -4,9 +4,9 @@ const data = JSON.stringify({
   data: {
     type: "node--article",
     attributes: {
-      title: "My custom NODE title",
+      title: "This Posted from Github Actions",
       body: {
-        value: "Custom value",
+        value: "This Posted from Github Actions",
         format: "plain_text"
       }
     }
