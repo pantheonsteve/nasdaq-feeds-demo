@@ -11,16 +11,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
-        
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 15.x
       - name: install https
         run: npm install -g https
       - name: install rss-parser
@@ -29,4 +25,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Run node script as a test
-        run: node ${{ github.workspace }}/post-to-drupal.js
+        run: node ${{ github.workspace }}/parse.js
