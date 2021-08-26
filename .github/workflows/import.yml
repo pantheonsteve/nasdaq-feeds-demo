@@ -24,7 +24,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Pull feed items from Redis and POST to Drupal
+      - name: Import feed items from Redis and POST to Drupal
         run: node ${{ github.workspace }}/parse-reddit.js
-      - name: Pull feed items from Jasonet and POST to Drupal
+      - name: Import feed items from Jasonet and POST to Drupal
         run: node ${{ github.workspace }}/parse-jasonet.js
