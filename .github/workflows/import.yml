@@ -1,4 +1,4 @@
-name: Push Multiple Feed Data to Drupal
+name: Import Multiple Feed Data to Drupal
 
 on:
   schedule:
