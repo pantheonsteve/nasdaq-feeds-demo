@@ -1,5 +1,7 @@
 # nasdaq-feeds-demo
 
+This demo uses Github Actions to pull data from RSS feeds and import those feeds into Drupal as nodes using the Drupal's JSONAPI.
+
 ### Example RSS feed:
 
 <!--START_SECTION:feed-->
