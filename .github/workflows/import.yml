@@ -1,4 +1,4 @@
-name: Import RSS Feed 
+name: Push Feed Data to Drupal
 
 on:
   schedule:
@@ -11,9 +11,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: i-valchev/rss-to-json@v1
-        with:
-          source: data/feeds.yaml # An optional parameter to specify the source. Defaults to feeds.yaml
-          target: output/feeds.json # An optional parameter to specify the target. Defaults to feeds.json
-          sortBy: An optional parameter to sort the feed items by a field. Default is isoDate.
-          sortOrder: An optional parameter to specify the order direction. 'desc' or 'asc'. Default is desc.
+      - name: install https
+        run: npm install -g https
+      - name: post data to drupal
+        run: node ./.github/scripts/post-to-drupal.js
